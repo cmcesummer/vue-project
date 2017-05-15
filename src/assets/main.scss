@@ -1,0 +1,844 @@
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+$browser-default-font-size: 75px !default; //变量的值为设计图尺寸Width
+@function pxRem($px) {
+  @return $px / $browser-default-font-size
+}
+.msgToast{top:7rem!important;}
+.white-content {
+    background: #fff;
+    text-align: center;
+    margin:0 10px;
+    height:pxRem(780px);
+}
+
+.orange-color{
+  color:#fa7718;
+}
+.orange-bkg{
+  background: #fa7718;
+}
+.default-color {
+  color: #262626
+}
+.white-color {
+  color: #ffffff;
+}
+
+/*额度申请步骤*/
+.application {
+
+  .gray {
+    width:100%;
+    height: 0.394rem;
+    display: block;
+    background: #f5f5f5;
+  }
+  .login-header {
+    background: linear-gradient(#fa7718, #fa9a1a);
+    color: #ffffff;
+  }
+  .stepContainer {
+    padding: 0 20px 5px;
+  }
+  .informationForm {
+    .icon-3{
+      font-size: 14px;
+      transform: rotate(180deg);
+      float:right;
+      padding:0;
+      height: 1rem;
+      width: 1rem
+    }
+  }
+  .informationListItem {
+    padding:0 0.1rem 0 0.5rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.45rem;
+    text-align: left;
+    span:last-of-type{
+      float:right;
+    }
+    input{
+      font-size: 12px;
+    }
+    .inInput{
+      float: right;
+      width: 200px;
+      height: 16px;
+      min-height: 10px;
+      margin-top: -4px;
+    }
+    .tel{
+      border:none;
+      background: #f5f5f5;
+      height:20px;
+      padding-left:5px;
+      float:right;
+      margin-top:0.2rem;
+      margin-right:0.2rem;
+    }
+    .telOne{
+      margin-left:20px;
+      width:40px;
+    }
+    .telTwo{
+      padding-left:10px;
+      width:80px;
+    }
+    .telThree {
+      width:50px;
+    }
+  }
+  .informationListItems{
+    padding:0 0 0 0.5rem;
+    text-align: left;
+    height: 1.5rem;
+  }
+
+  .nextStep{
+    padding:0 2rem;
+  }
+  .fullBtn {
+    color: #ffffff;
+    background: linear-gradient(to right, #fa9a1a, #fa7718);
+    border-radius: 20px;
+    margin-top:20px;
+    font-size:16px;
+  }
+  .agreement {
+    padding: 10px;
+    color: #a3b5cd;
+  }
+
+}
+.pickerHeader{
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+}
+.pickerLeft{
+  float:left
+}
+.pickerRight {
+  float: right
+}
+
+/*首页*/
+.homePage {
+  height:100%;
+  color:#ffffff;
+  background: linear-gradient(#fa7718, #fb9b1b);
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  .content{
+    color:#000000;
+    margin:0 10px 20px 10px;
+    background-color: #ffffff;
+    background-repeat:no-repeat;
+    background-position: center bottom;
+
+    background-size:6.8rem 4.9rem;
+    border-radius:4px;
+    height:10.4rem;
+    padding: 0.67rem;
+
+    .logo {
+      color: #343434;
+      font-size: 0.4rem;
+      letter-spacing:2px;
+    }
+    .timing {
+      padding:1.2rem 0;
+      margin: 0 auto;
+      position: relative;
+      .timeCircle{
+        transform: rotate(-90deg);
+      }
+      .timeNum {
+        position: absolute;
+        top:1.2rem;
+        height:90px;
+        line-height: 90px;
+        width:100%;
+        font-size: 60px;
+        color: #ff7043;
+      }
+    }
+    .pleaseWait{
+
+    }
+    .totalMoney {
+      padding:0.6rem 0 0.8rem;
+      color: #666666;
+      font-size: 0.373rem;
+      .big {
+        font-size: 1rem;
+        color: #fe8002
+      }
+    }
+    .detailMoney {
+      overflow: hidden;
+      .waitPay {
+        width:50%;
+        display: inline-block;
+        box-sizing: border-box;
+        float:left;
+        .title {
+          font-size: 0.374rem;
+          color: #333;
+        }
+        .money {
+          color: #f38a5c;
+          font-size: 0.533rem!important;
+        }
+      }
+    }
+    .nextStep {
+      padding: 0.5rem 0 0 0;
+      .will-loan-btn {
+        color: #ffffff;
+        background: linear-gradient(to right, #fa9a1a, #fa7718);
+        border-radius: 20px;
+        font-size:16px;
+      }
+    }
+    .pay-back {
+      padding-top:2px;
+      color: #666666;
+      .back-money{
+        color: #07d07d;
+      }
+    }
+  }
+  .my-loan {
+    margin: 0 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    height: 1.33rem;
+    padding: 0 0.267rem;
+    color: #333;
+    font-size: 0.427rem;
+    line-height: 1.33rem;
+    text-align: left;
+    .look-all{
+      float: right;
+      color: #999;
+      img {
+        vertical-align: middle;
+      }
+
+    }
+  }
+  .getPomeloMoney {
+    margin-top:2rem;
+    margin-bottom:0.5rem;
+  }
+}
+
+/*绑定银行卡*/
+.bind-bank-card {
+  .login-header{
+    background: linear-gradient(#fa7718, #fa9a1a);
+    color:#ffffff;
+  }
+  .gray {
+    width:100%;
+    display: block;
+    background: #f5f5f5;
+    text-align: left;
+    height:1.14rem;
+    line-height:1.14rem;
+    font-size:0.35rem;
+    padding-left: 0.4rem;
+    .open-bank-btn {
+      float:right;
+      height:1.14rem;
+      color: #27c96a;
+    }
+  }
+  .nextStep{
+    padding:0 2rem;
+  }
+  .fullBtn {
+    color: #ffffff;
+    background: linear-gradient(to right, #fa9a1a, #fa7718);
+    border-radius: 20px;
+    margin-top:20px;
+    font-size:16px;
+  }
+  .agreement {
+    padding: 10px;
+    color: #a3b5cd;
+  }
+  .bank-list-title {
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+  }
+  .get-verti-code {
+    color: #fa7718;
+    width:70px;
+    min-width:70px;
+    margin-right:-10px;
+
+  }
+}
+
+/*借钱*/
+.loanMoney {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  background: #f5f5f5;
+  .loan-header {
+    background: linear-gradient(#fa7718, #fa9a1a);
+    color:#ffffff;
+  }
+  .container {
+    padding: 0.4rem;
+    text-align: left;
+    background: #fff;
+    .header {
+      height: 1rem;
+      line-height: 1rem;
+      font-size:0.4rem;
+      color: #666;
+      .borrow-all{
+        color: #27c96a;
+        float: right;
+        height: 1rem;
+      }
+    }
+    .input-money{
+      border-bottom:1px solid #e6e6e6;
+      padding: 0.5rem 0;
+      color: #333;
+      span {
+        font-size: 0.64rem;
+      }
+      input {
+        vertical-align: middle;
+        font-size: 1.31rem;
+        width:8rem;
+        border:none;
+      }
+    }
+    .interest-text{
+      padding-top: 0.4rem;
+      color: #999;
+      font-size: 0.32rem;
+    }
+    .list {
+      padding: 0.3rem 0.4rem;
+      overflow: hidden;
+      font-size: 0.4rem;
+      border-bottom: 1px solid #e3e3e3;
+      &:last-of-type {
+        border:none;
+      }
+      &>div {
+        height:1rem;
+        line-height: 1rem;
+        width: 50%;
+        display: inline-block;
+        float: left;
+        &:first-of-type {
+          text-align: left;
+        }
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+
+      .underlineClass {
+        background-color: #e3e3e3;
+      }
+      .menuListText {
+        border: 1px solid #e3e3e3;
+        height: 1rem;
+        line-height:1rem;
+        font-size: 0.4rem;
+      }
+      .iconClass {
+        display: none;
+      }
+      .icon-3{
+        font-size: 14px;
+        transform: rotate(180deg);
+        float:right;
+        padding:0;
+        height: 1rem;
+        width: 1rem
+      }
+    }
+  }
+  .borrow-btn-sure{
+    padding:0 2rem;
+    .fullBtn {
+      color: #ffffff;
+      background: linear-gradient(to right, #fa9a1a, #fa7718);
+      border-radius: 20px;
+      margin-top:20px;
+      font-size:16px;
+    }
+  }
+  .agreement {
+    padding: 10px;
+    color: #a3b5cd;
+  }
+}
+
+/*借款记录 + 全部待还*/
+.loanRecord {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  .loan-record-list {
+    border-bottom: 1px solid #e4e5e5;
+    padding: 0.4rem 1rem 0.4rem 0.4rem;
+    overflow: hidden;
+    .icon-3{
+      font-size: 14px;
+      transform: rotate(180deg);
+      float:right;
+      padding:0;
+      height: 1rem;
+      width: 1rem;
+      position:absolute;
+    }
+    .left {
+      text-align: left;
+      float: left;
+      width: 50%;
+      &>span:first-of-type {
+        font-size: 0.4rem;
+        color: #333;
+      }
+      &>span:last-of-type {
+        font-size: 0.32rem;
+        color: #999;
+      }
+    }
+    .right {
+      width: 50%;
+      text-align: right;
+      float: left;
+      &>span {
+        display: inline-block;
+        height:1rem;
+        line-height: 1rem;
+      }
+    }
+  }
+
+}
+
+/*借款详情*/
+.loanDetail{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  .loan-detail-list {
+    border-bottom: 1px solid #e4e5e5;
+    padding: 0.4rem;
+    overflow: hidden;
+    font-size: 0.37rem;
+    color: #999;
+    &>div:first-of-type {
+      width: 50%;
+      text-align: left;
+      float: left;
+    }
+    &>div:last-of-type {
+      color: #333;
+      width: 50%;
+      text-align: right;
+      float: left;
+    }
+  }
+
+}
+/*还款计划清单*/
+.loan-detail-bottom-sheet {
+  .pickerHeaderd{
+    padding: 3px 0;
+    text-align: center;
+    font-size: 0.347rem;
+    &>span:first-of-type {
+      font-size: 0.48rem;
+      color: #333;
+    }
+    &>span:last-of-type {
+      color: #27c96a;
+    }
+  }
+
+  .pay-back-plan-list {
+    padding: 0.3rem;
+    overflow: hidden;
+    border-top: 1px solid #e3e3e3;
+    & > div {
+      width: 50%;
+      float: left;
+      &:first-of-type {
+        text-align: left;
+        font-size: 0.373rem;
+        color: #999;
+      }
+      &:last-of-type {
+        text-align: right;
+        font-size: 0.4rem;
+        &>span:first-of-type {
+          color: #666;
+        }
+        &>span:last-of-type {
+          color: #333;
+        }
+      }
+    }
+    .orange {
+      color: #fa7718!important;
+    }
+  }
+}
+/*全部待还 待还详情 还款*/
+.all-pay-back-bottom-sheet {
+  .pickerHeaderd {
+    padding:0.2rem;
+    font-size: 0.6rem;
+    text-align: center;
+    overflow: hidden;
+    border-top: 1px solid #e3e3e3;
+  }
+  .pay-back-total {
+    background: #e3e3e3;
+    padding: 0.3rem;
+    .list {
+      text-align: right;
+      overflow: hidden;
+      font-size: 0.3rem;
+      color: #666;
+      .money {
+        font-size: 0.4rem;
+        color: #333;
+      }
+      &>div{
+        float: left;
+        width: 50%;
+        &:first-of-type {
+          text-align: left;
+        }
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+      &>span {
+        font-size: 0.25rem;
+      }
+
+    }
+  }
+  .pay-back-plan-list {
+    padding: 0.3rem 0 0.3rem 0.3rem;
+    overflow: hidden;
+    border-top: 1px solid #e3e3e3;
+    & > div {
+      width: 50%;
+      float: left;
+      &:first-of-type {
+        text-align: left;
+        font-size: 0.373rem;
+        color: #999;
+      }
+      &:last-of-type {
+        text-align: right;
+        font-size: 0.4rem;
+        &>span:first-of-type {
+          color: #666;
+        }
+        &>span:last-of-type {
+          color: #333;
+        }
+      }
+    }
+    .orange {
+      color: #fa7718!important;
+    }
+  }
+  .pay-now-btn {
+    color: #ffffff;
+    background: linear-gradient(to right, #74e681, #27ca6c);
+    border-radius: 20px;
+    font-size:16px;
+  }
+}
+
+/*当前应还*/
+.currentPayBack {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  background: #fff;
+  .container {
+    padding: 0.4rem 0.4rem 0.2rem;
+    text-align: left;
+    .header {
+      height: 1rem;
+      line-height: 1rem;
+      font-size: 0.4rem;
+      color: #666;
+      .borrow-all {
+        color: #27c96a;
+        float: right;
+        height: 1rem;
+      }
+    }
+    .input-money {
+      border-bottom: 1px solid #e6e6e6;
+      padding: 0 0 0.3rem;
+      color: #333;
+      span {
+        vertical-align: middle;
+        font-size: 1rem;
+        width: 8rem;
+        border: none;
+      }
+    }
+    .interest-text {
+      text-align: right;
+      padding-top: 0.2rem;
+      color: #ccc;
+      font-size: 0.32rem;
+    }
+  }
+  .gray {
+    background: #f5f5f5;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    font-size: 0.37rem;
+    color: #333;
+    text-align: left;
+    padding: 0 0.4rem;
+  }
+  .detail{
+    .current-pay-back-list {
+      padding: 0 0.4rem;
+      overflow: hidden;
+      border-bottom: 1px solid #e3e3e3;
+      & > div {
+        height: 1.6rem;
+        width: 50%;
+        float: left;
+        display: inline-block;
+        vertical-align: middle;
+        &:first-of-type {
+          padding: 0.2rem 0;
+          text-align: left;
+          font-size: 0.373rem;
+          color: #999;
+          &>span:first-of-type {
+            font-size: 0.427rem;
+            color: #666;
+          }
+        }
+        &:last-of-type {
+          text-align: right;
+          font-size: 0.4rem;
+          line-height: 1.6rem;
+          &>span:first-of-type {
+            color: #666;
+          }
+        }
+      }
+      .orange {
+        color: #fa7718!important;
+      }
+    }
+  }
+}
+
+/*提前还款*/
+.advancePayBack{
+  .gray {
+    background: #f5f5f5;
+    height: 1.147rem;
+    line-height: 1.147rem;
+    color: #333;
+    font-size: 0.373rem;
+    text-align: left;
+    padding: 0 0.4rem;
+  }
+  .list {
+    .iconClass {
+      color: #27c96a;
+    }
+    .advance-list {
+      padding: 0 0.3rem;
+      border-bottom: 1px solid #e3e3e3;
+      overflow: hidden;
+      &:last-of-type {
+        border-bottom: 1px dashed #dedede;
+      }
+      &>div{
+        float: left;
+        height: 1.6rem;
+        width: 45%;
+        text-align: left;
+        padding: 0.25rem 0;
+        &>span {
+          &:first-of-type{
+            color: #333;
+            font-size: 0.4rem;
+          }
+          &:last-of-type {
+            color: #666;
+            font-size: 0.373rem;
+          }
+        }
+
+        &:first-of-type {
+          line-height: 1.6rem;
+          width: 10%;
+        }
+        &:last-of-type {
+          padding: 0;
+          line-height: 1.6rem;
+          text-align: right;
+          &>span {
+            color: #333;
+            font-size: 0.4rem;
+          }
+        }
+      }
+    }
+    .total-advance-list {
+      padding: 1rem 0.3rem 0.3rem;
+      border-bottom: 1px solid #e3e3e3;
+      text-align: left;
+      overflow: hidden;
+      .labelClass {
+        font-size:0.4rem;
+        color: #999999;
+        margin-left: -0.3rem;
+      }
+      &>div:first-of-type {
+        float: left;
+        width: 40%;
+      }
+      &>div:last-of-type {
+        float: right;
+        width: 60%;
+        text-align: right;
+        &>span:first-of-type {
+          color: #999;
+          font-size: 0.347rem;
+          &>span {
+            font-size: 0.51rem;
+            color: #333;
+          }
+        }
+        &>span:last-of-type {
+          color: #ffcc99;
+        }
+      }
+    }
+  }
+  .nextStep {
+    padding: 1rem;
+    .will-loan-btn {
+      color: #ffffff;
+      background: linear-gradient(to right, #74e681, #27ca6c);
+      border-radius: 20px;
+      font-size:16px;
+    }
+  }
+}
+
+/*设置密码*/
+.setPayPassword {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  background: #f5f5f5;
+  .header {
+    padding: 0.6rem 0.4rem;
+    .green {
+      color: #27c96a;
+    }
+  }
+  .remember-header {
+    padding: 0.6rem 0.4rem;
+    background: #fff;
+    font-size: 0.427rem;
+    color: #999;
+    &>span {
+      color: #333;
+    }
+  }
+  .rem-btn-box {
+    padding: 0.67rem 0.5rem;
+    .rem-btn {
+      border-radius: 20px;
+      &:first-of-type {
+        margin-right: 0.8rem;
+      }
+      &:last-of-type {
+        background: linear-gradient(to right, #fa9a1a, #fa7718);
+        color: #ffffff;
+      }
+    }
+  }
+  .get-verti-code{
+    color:  #fa7718
+  }
+  .password-box{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+  }
+  .nextStep {
+    padding: 1rem;
+    .fullBtn {
+      color: #ffffff;
+      background: linear-gradient(to right, #fa9a1a, #fa7718);
+      border-radius: 20px;
+      font-size:16px;
+    }
+  }
+}
+
+
