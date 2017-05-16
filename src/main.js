@@ -9,9 +9,10 @@ import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-carbon.css'
 import '@/assets/style.css'
 import commonReg from '@/assets/js/commonReg'
-import $api from '@/assets/js/$api'
+import $api from '@/assets/js/ajax'
 import filter from '@/assets/js/filter'
 import FastClick from 'fastclick'
+
 
 import { Field, Popup, Indicator, Toast } from 'mint-ui'
 
@@ -41,7 +42,11 @@ if ('addEventListener' in document) {
 
 Vue.config.productionTip = false;
 
-Vue.filter('loanRecordType', filter.loanRecordType);
+//注册vue 滤器
+Object.keys(filter).forEach(key => {
+  Vue.filter(key, filter[key]);
+});
+
 
 /* eslint-disable no-new */
 new Vue({

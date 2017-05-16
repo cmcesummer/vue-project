@@ -1,11 +1,9 @@
 <template>
     <div class="login">
-        <header-bar title='柚有钱' class="login-header">
-          <mu-icon-button class="icon-3" slot="left"></mu-icon-button>
-          <mu-icon-button  slot="right"></mu-icon-button>
-        </header-bar>
+
         <div class="logo">
-          logo
+          <h1><img src="./../../assets/image/slogo@2x.png" alt="柚有钱">柚有钱</h1>
+          <h3>柚有钱用户身份确认</h3>
         </div>
         <div class="loginInput">
             <div class="first">
@@ -95,7 +93,7 @@ export default {
             if (this.toastTimer) clearTimeout(this.toastTimer)
         },
         updateBtn() {
-          this.$router.push({name:'Apply'});
+          //this.$router.push({name:'Apply'});
           if(this.commonReg.loginCode.test(this.loginCode) && this.commonReg.mobile.test(this.mobile)) {
             console.log(this.loginCode, this.mobile);
 
@@ -162,7 +160,20 @@ export default {
 }
 
 .logo{
-    height:5rem;
+    height: 5rem;
+    font-size: 0.4rem;
+    img {
+      vertical-align: sub;
+      height: 1.2rem;
+      width: 1.2rem;
+      margin-left:-5px;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+    h3 {
+      color: #fcc176;
+    }
 }
 
 .login-header {

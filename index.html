@@ -10,6 +10,38 @@
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script type="text/javascript">
+      (function() {
+
+        var tokenId = 'cpomelo' + "-" +new Date().getTime() + "-"+ Math.random().toString(16).substr(2);
+        _fmOpt = {
+          partner: 'cpomelo',
+          appName: 'cpomelo_wx',
+          token: tokenId,
+          fpHost: 'https://fptest.fraudmetrix.cn',
+          staticHost: 'statictest.fraudmetrix.cn',
+          tcpHost: 'fpflashtest.fraudmetrix.cn',
+          wsHost: 'fptest.fraudmetrix.cn:9090'
+        };
+
+        var cimg = new Image(1,1);
+
+        cimg.onload = function() {
+
+          _fmOpt.imgLoaded = true;
+
+        };
+
+        cimg.src = "https://fptest.fraudmetrix.cn/fp/clear.png?partnerCode=xinfenbao&appName=yxfd_web&tokenId=" + _fmOpt.token;
+
+        var fm = document.createElement('script'); fm.type = 'text/javascript'; fm.async = true;
+
+        fm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'statictest.fraudmetrix.cn/fm.js?ver=0.1&t=' + (new Date().getTime()/3600000).toFixed(0);
+
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fm, s);
+
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

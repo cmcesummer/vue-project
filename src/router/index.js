@@ -205,6 +205,17 @@ export default new Router({
       component: resolve => {
         require(['@/pages/setCommon/changePayPassword'], resolve)
       }
+    },
+    //下载app
+    {
+      path: '/set/downLoadPage',
+      name: 'DownLoadPage',
+      meta: {
+        title: '柚有钱贷款金融平台'
+      },
+      component: resolve => {
+        require(['@/pages/setCommon/downLoadPage'], resolve)
+      }
     }
 
   ]

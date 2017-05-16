@@ -1,9 +1,6 @@
 <template>
   <div class="application">
-    <header-bar title='额度申请' class="login-header">
-      <mu-icon-button class="icon-3" slot="left"></mu-icon-button>
-      <mu-icon-button slot="right"></mu-icon-button>
-    </header-bar>
+
 
     <div class="stepContainer">
       <apply-step :step="activeStep"></apply-step>
@@ -35,11 +32,7 @@
           </div>
           <mu-divider />
 
-          <div class="informationListItem">
-            <span>现居住城市</span>
-            <mu-icon-button class="icon-3" slot="left" @click="openCity"></mu-icon-button>
-            <span>{{cityText}}</span>
-          </div>
+          <live-city :cityProp="cityProp" @on-live-city-change="onLiveCityChange"></live-city>
           <mu-divider />
 
           <div class="informationListItems">
@@ -82,6 +75,7 @@
 <script>
 import HeaderBar from '@/components/Header'
 import ApplyStep from '@/components/ApplyStep'
+import LiveCity from '@/pages/application/components/liveCity'
 export default{
   data() {
     return {
@@ -100,12 +94,15 @@ export default{
       typeText:'',
       cityText:'',
       registerText:'',
-      marriageText:''
+      marriageText:'',
+      //居住城市
+      cityProp: ''
     }
   },
   components: {
     HeaderBar,
-    ApplyStep
+    ApplyStep,
+    LiveCity
   },
   methods: {
     pickerCancel() {

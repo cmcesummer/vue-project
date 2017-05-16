@@ -1,9 +1,6 @@
 <template>
   <div class="application">
-    <header-bar title='额度申请' class="login-header">
-      <mu-icon-button class="icon-3" slot="left"></mu-icon-button>
-      <mu-icon-button slot="right"></mu-icon-button>
-    </header-bar>
+
 
     <div class="stepContainer">
       <apply-step :step="activeStep"></apply-step>
@@ -34,12 +31,9 @@
           </div>
           <mu-divider />
 
-          <div class="informationListItem">
-            <span>入职时间</span>
-            <mu-icon-button class="icon-3" slot="left" @click="openRegister"></mu-icon-button>
-            <span>{{registerText}}</span>
-          </div>
+          <work-time :workTimeProp="workTimeProp" @on-work-time-change="onWorkTimeChange"></work-time>
           <mu-divider />
+
 
           <div class="informationListItem">
             <span>所在部门</span><span></span>
@@ -88,26 +82,22 @@
       <span>同意 《柚子信用贷贷款服务协议》</span>
     </div>
 
-    <mu-bottom-sheet :open="eduBottomSheet" @close="closeBottomSheet">
-      <div class="pickerHeader">
-        <mu-flat-button label="取消" class="demo-flat-button pickerLeft" @click="pickerCancel"></mu-flat-button>
-        <span></span>
-        <mu-flat-button label="确定" class="demo-flat-button pickerRight" @click="educationSure"></mu-flat-button>
-      </div>
-      <mu-picker :slots="educationSlots" :visible-item-count="5" @change="educationChange" :values="education"/>
-    </mu-bottom-sheet>
+
 
   </div>
 </template>
 
 <script>
-  import HeaderBar from '@/components/Header'
   import ApplyStep from '@/components/ApplyStep'
+  //入职时间
+  import WorkTime from '@/pages/application/components/workTime'
+
   export default{
     data() {
       return {
         activeStep: 2,
         eduBottomSheet: false,
+
         educationSlots: [
           {
             width: '100%',
@@ -121,12 +111,16 @@
         typeText:'',
         cityText:'',
         registerText:'',
-        marriageText:''
+        marriageText:'',
+        //入职时间
+        workTimeProp: '1485964800000',
+        //
+
       }
     },
     components: {
-      HeaderBar,
-      ApplyStep
+      ApplyStep,
+      WorkTime
     },
     methods: {
       pickerCancel() {
@@ -147,8 +141,15 @@
         this.industryText = this.education[0];
       },
       nextStep() {
-        this.$router.push({name:'ApplyContact'})
+        //this.$router.push({name:'ApplyContact'})
+        console.log(new Date(this.workTimeProp))
+      },
+
+      /*----------入职时间--------------*/
+      onWorkTimeChange(val) {
+        this.workTimeProp = val
       }
+
     }
   }
 </script>

@@ -1,9 +1,6 @@
 <template>
   <div class="application">
-    <header-bar title='额度申请' class="login-header">
-      <mu-icon-button class="icon-3" slot="left"></mu-icon-button>
-      <mu-icon-button slot="right"></mu-icon-button>
-    </header-bar>
+
 
     <div class="stepContainer">
       <apply-step :step="activeStep"></apply-step>
@@ -52,6 +49,8 @@
 <script>
 import HeaderBar from '@/components/Header'
 import ApplyStep from '@/components/ApplyStep'
+import wx from 'weixin-js-sdk'
+
 export default {
   data() {
     return {

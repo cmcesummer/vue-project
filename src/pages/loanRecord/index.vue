@@ -41,8 +41,7 @@ const dataArr = [{
   time:'2017-02-02',
   type:'3'
 }];
-import Vue from 'vue'
-let loanRecordType = Vue.filter('loanRecordType');
+
 export default {
   data() {
     return {
